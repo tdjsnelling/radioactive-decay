@@ -1,5 +1,5 @@
 # -*- coding: utf-8 -*-
-# raddec.py
+# radioactive-decay.py
 import sys, math, time
 import matplotlib.pyplot as mpl
 
