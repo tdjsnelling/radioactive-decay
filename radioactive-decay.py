@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 # radioactive-decay.py
-import sys, math, time
+import sys, math, time, array
 import matplotlib.pyplot as mpl
 
 # λ = ln(2) / t (half)
@@ -10,14 +10,14 @@ start_time = time.time()
 mol = 6.022*(10**24)
 
 half_life = 1.00
-atoms = 10**4
+atoms = 10**6
 
 atoms_remaining = atoms
 
 decay_const = math.log(2) / half_life
 
-atoms_plot = []
-time_plot = []
+atoms_plot = array.array('I', [])
+time_plot = array.array('f', [])
 
 while atoms_remaining > 0:
 	elapsed_time = time.time() - start_time
