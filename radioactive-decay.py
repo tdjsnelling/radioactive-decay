@@ -8,7 +8,7 @@ import matplotlib.pyplot as mpl
 
 start_time = time.time()
 
-half_life = 19.29
+half_life = 19.29 # carbon-10
 atoms = 100
 
 atoms_remaining = atoms
@@ -22,11 +22,10 @@ index = 0
 
 while atoms_remaining > 0:
 	elapsed_time = time.time() - start_time
-	atoms_remaining = int(atoms * math.exp(-decay_const*elapsed_time))
-	# print "\r", elapsed_time, int(atoms_remaining)
+	atoms_remaining = int(atoms * math.exp(-decay_const * elapsed_time))
 
 	# index once every 10**3 to save memory
-	if (index / 10**3) % 10**3== 0:
+	if index % 10**3 == 0:
 		atoms_plot.append(atoms_remaining)
 		time_plot.append(elapsed_time)
 
